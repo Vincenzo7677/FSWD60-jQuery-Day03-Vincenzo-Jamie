@@ -11,6 +11,7 @@
 			display: flex;
 			flex-direction: column;
 			margin: 0 auto;
+			padding-bottom: 50px;
 			width: 80%;
 		}
 	</style>
@@ -22,25 +23,46 @@
 	</header><!-- /header -->
 	
 	<article>
-		<ol>
-			<li>Wake Up, get showered and shaved!</li>
-			<li>Get breakfast!</li>
-			<li>Get on the train to come to CF in Vienna</li>
-			<li>Evening, take train home!</li>
-			<li>Kiss wife</li>
-			<li>Have dinner</li>
-			<li>Finalise prework for next day!</li>
+		<ol class="todo">
+			
 		</ol>
+		<input id="ipt" type="text" name="addText" placeholder="Add your to do...">
+		<button id="btn">Add to list</button>
 	</article>
+
+
 
 	<script>
 		$(document).ready(function(){
 			$("h1").css({"background-color": "lightgreen", "color":"white",});
-			$("li").css({"margin": "30px", "background-color": "lightblue", "color":"darkblue", "font-size": "1.2em", "padding": "20px", });
+			$("#btn").css({"background-color": "grey", "color" : "white", "width": "200px", "font-size": "1.2em"});
+			$("#ipt").css({"width": "200px", "font-size": "1.2em"});
 
 
 
-		});
+			$("#btn").on("click", function(){
+
+
+					var inputInfo = $("#ipt").val();
+					$(".todo").append("<li>"+inputInfo+"</li>")
+					$("li").css({"margin": "30px", "background-color": "lightblue", "color":"darkblue", "font-size": "1.2em", "padding": "20px", });
+
+					$("li").on("click",function(){
+					$(this).animate({
+					opacity: 0.0,
+					paddingLeft: '+=100'},
+					500, function(){
+						$(this).remove();
+					});
+
+				});
+					$("#ipt").val("");
+
+				});
+
+
+			});
+
 
 
 	</script>
