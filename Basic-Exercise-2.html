@@ -33,29 +33,36 @@
 
 
 	<script>
+		//Exercise Basic 02
 		$(document).ready(function(){
+			//We style the various elements.
 			$("h1").css({"background-color": "lightgreen", "color":"white",});
 			$("#btn").css({"background-color": "grey", "color" : "white", "width": "200px", "font-size": "1.2em"});
 			$("#ipt").css({"width": "200px", "font-size": "1.2em"});
 
 
-
+			//Select the button and add on click function.
 			$("#btn").on("click", function(){
 
-
+					//Create a variable to hold the value of the input.
 					var inputInfo = $("#ipt").val();
+					//Select the class and set the position of the variable.
 					$(".todo").append("<li>"+inputInfo+"</li>")
+					//Styled the add list element.
 					$("li").css({"margin": "30px", "background-color": "lightblue", "color":"darkblue", "font-size": "1.2em", "padding": "20px", });
 
+					//Select the list and add a on click function.
 					$("li").on("click",function(){
-					$(this).animate({
-					opacity: 0.0,
-					paddingLeft: '+=100'},
-					500, function(){
-						$(this).remove();
+						//add a animation...
+						$(this).animate({
+								opacity: 0.0,
+								paddingLeft: '+=100'},
+								500, function(){
+									$(this).remove();
 					});
 
 				});
+					//Sets the input value to 0.
 					$("#ipt").val("");
 
 				});
