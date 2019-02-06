@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CF To Do List!</title>
+	<link rel="stylesheet" href="">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style media="screen">
+		body {
+			display: flex;
+			flex-direction: column;
+			margin: 0 auto;
+			width: 80%;
+		}
+	</style>
+
+</head>
+<body>
+	<header id="header" class="headertitle">
+		<h1>CF To Do List - Keep your Tasks in Order!</h1>
+	</header><!-- /header -->
+	
+	<article>
+		<ol>
+			<li>Wake Up, get showered and shaved!</li>
+			<li>Get breakfast!</li>
+			<li>Get on the train to come to CF in Vienna</li>
+			<li>Evening, take train home!</li>
+			<li>Kiss wife</li>
+			<li>Have dinner</li>
+			<li>Finalise prework for next day!</li>
+		</ol>
+	</article>
+
+	<script>
+		$(document).ready(function(){
+			$("h1").css({"background-color": "lightgreen", "color":"white",});
+			$("li").css({"margin": "30px", "background-color": "lightblue", "color":"darkblue", "font-size": "1.2em", "padding": "20px", });
+
+
+
+		});
+
+
+	</script>
+</body>
+</html>
